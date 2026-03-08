@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | DROID 5.0</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+            background-color: #0a0a0a; 
+            color: #f2f2f2;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: #000;
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 1px solid #222;
+            animation: slideDown 1s ease-out;
+        }
+
+        header h1 {
+            margin: 0;
+            letter-spacing: 8px;
+            font-size: 42px;
+            color: #ffffff;
+            font-weight: 800;
+        }
+
+        header span {
+            color: var(--ieee-orange); 
+        }
+
+        header p {
+            margin-top: 10px;
+            color: #888;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .container {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h2 {
+            color: #ffffff;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        p {
+            line-height: 1.9;
+            color: #b0b0b0; 
+            font-size: 17px;
+            margin-bottom: 25px;
+        }
+
+        .highlight {
+            background-color: #161616;
+            padding: 40px;
+            border-left: 4px solid var(--ieee-orange);
+            margin-top: 40px;
+            border-radius: 4px;
+            transition: transform 0.3s ease;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        .highlight:hover {
+            transform: scale(1.02);
+            background-color: #1c1c1c;
+        }
+
+        .highlight h2 {
+            margin-top: 0;
+            border: none;
+            color: var(--ieee-orange);
+        }
+
+        .check-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .check-list li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+
+        .check-list li::before {
+            content: "→";
+            color: var(--ieee-orange);
+            margin-right: 15px;
+            font-weight: bold;
+        }
+
+        /* Animations */
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .nav-back {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        footer {
+            background-color: #000;
+            text-align: center;
+            padding: 30px;
+            margin-top: 80px;
+            color: #555;
+            font-size: 13px;
+            border-top: 1px solid #111;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>DROID <span>5.0</span></h1>
+    <p>Innovate • Automate • Accelerate</p>
+</header>
+
+<div class="container">
+     <section id="about">
+        <h2 class="section-title">Event Highlights</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Robotics Workshops</h3>
+                <p>Learn cutting-edge robotics through curated modules led by industry specialists.</p>
+            </div>
+            <div class="card">
+                <h3>Hands-on Training</h3>
+                <p>Practical sessions focused on building, coding, and deploying robotic systems.</p>
+            </div>
+            <div class="card">
+                <h3>Expert Talks</h3>
+                <p>Gain insights from global leaders in automation, AI, and robotics research.</p>
+            </div>
+        </div>
+    </section>
+    <div class="reveal">
+        <h2>Genesis of DROID</h2>
+        <p>
+            DROID 5.0 is the flagship technical symposium organized by <strong>IEEE FISAT SB</strong> in collaboration with 
+            <strong>IEEE RAS SBC FISAT</strong>. Since its inception, DROID has served as a crucible for 
+            innovation, bringing together the brightest minds in robotics and automation.
+        </p>
+    </div>
+
+    <div class="reveal">
+        <h2>Engineering Excellence</h2>
+        <p>
+            Much like the world's leading engineering brands, DROID 5.0 is built on the pillars of precision, 
+            technical rigor, and future-forward thinking. Our mission is to bridge the gap between 
+            classroom theory and industrial-grade robotics application through a 13th July 2026 technical odyssey.
+        </p>
+    </div>
+
+    <div class="highlight">
+        <h2>The DROID Standard</h2>
+        <ul class="check-list">
+            <li>State-of-the-art Robotics Workshops</li>
+            <li>Industrial Automation & AI Training</li>
+            <li>Networking with Global IEEE Researchers</li>
+            <li>Hands-on Hardware Prototyping Kits</li>
+            <li>IEEE Authorized Technical Certification</li>
+        </ul>
+    </div>
+
+    <div class="reveal">
+        <h2>The 2026 Vision</h2>
+        <p>
+            For its fifth iteration, DROID 5.0 focuses on the theme of "Autonomous Intelligence." 
+            We aim to empower delegates with the tools needed to design vehicles, drones, and 
+            industrial arms that think, learn, and act independently.
+        </p>
+    </div>
+
+    <div class="nav-back">
+        <a href="register.html" class="btn">REGISTER</a>
+    </div>
+    <a href="home.html" style="display: block; text-align: center; margin-top: 30px; color: #666; text-decoration: none; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px;">
+            ← Return Home
+        </a>
+</div>
+
+<footer>
+    Presented by IEEE RAS SBC FISAT & IEEE FISAT SB <br>
+    © 2026 Federal Institute of Science And Technology. All Rights Reserved.
+</footer>
+
+<script>
+    function reveal() {
+        var reveals = document.querySelectorAll(".reveal");
+        for (var i = 0; i < reveals.length; i++) {
+            var windowHeight = window.innerHeight;
+            var elementTop = reveals[i].getBoundingClientRect().top;
+            var elementVisible = 150;
+            if (elementTop < windowHeight - elementVisible) {
+                reveals[i].classList.add("active");
+            }
+        }
+    }
+
+    window.addEventListener("scroll", reveal);
+    
+    reveal();
+</script>
+
+</body>
+</html>

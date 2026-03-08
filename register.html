@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | DROID 5.0</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #050505;
+            background: radial-gradient(circle at top right, #1a1005 0%, #050505 60%);
+        }
+
+        .form-container {
+            background: rgba(22, 22, 22, 0.8);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 140, 0, 0.1);
+            border-top: 4px solid var(--ieee-orange);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            padding: 50px;
+            border-radius: 4px;
+            width: 100%;
+            max-width: 550px;
+        }
+
+        .input-hint {
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-top: 20px;
+            margin-bottom: 8px;
+            display: block;
+            opacity: 0.8;
+            color: var(--ieee-orange);
+        }
+
+        input[type="text"], input[type="email"] {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid #222;
+            padding: 14px 18px;
+            color: white;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            border-color: var(--ieee-orange) !important;
+            outline: none;
+            background: rgba(0, 0, 0, 0.8) !important;
+        }
+
+        .membership-options {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .option-card {
+            flex: 1;
+            position: relative;
+        }
+
+        .option-card input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .option-label {
+            display: block;
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #222;
+            background: rgba(0, 0, 0, 0.3);
+            color: #888;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        
+        .option-card input[type="radio"]:checked + .option-label {
+            border-color: var(--ieee-orange);
+            color: #fff;
+            background: rgba(255, 140, 0, 0.05);
+            box-shadow: 0 0 15px rgba(255, 140, 0, 0.1);
+        }
+
+        #ieeeIdWrapper {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        #ieeeIdWrapper.active {
+            max-height: 100px;
+            opacity: 1;
+            margin-top: 10px;
+        }
+
+        .price-box {
+            background: rgba(255, 140, 0, 0.03);
+            border: 1px solid rgba(255, 140, 0, 0.1);
+            border-left: 3px solid var(--ieee-orange);
+            padding: 20px;
+            margin: 30px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #priceDisplay {
+            font-weight: 300;
+            font-size: 1.8rem;
+            color: #fff;
+        }
+    </style>
+</head>
+<body style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; padding: 20px;">
+
+    <div style="text-align: center; margin-bottom: 35px;">
+        <div class="logo" style="font-size: 2.2rem; letter-spacing: 5px; color: #fff; font-weight: 800;">
+            DROID <span>5.0</span>
+        </div>
+        <p style="color: #888; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 4px; margin-top: 5px;">
+            IEEE RAS SBC FISAT
+        </p>
+    </div>
+
+    <div class="form-container">
+        <h2 style="margin-bottom: 8px; font-size: 1.4rem; font-weight: 300; letter-spacing: 1px; color: #fff;">Register</h2>
+        
+        <form id="registrationForm">
+            <label class="input-hint">FULL NAME</label>
+            <input type="text" id="fullname" placeholder="Enter your name" required>
+
+            <label class="input-hint">EMAIL ADDRESS</label>
+            <input type="email" id="email" placeholder="123@gmail.com" required>
+
+            <label class="input-hint">COLLEGE / INSTITUTION</label>
+            <input type="text" id="college" placeholder="FISAT" required>
+
+            <label class="input-hint">MEMBERSHIP STATUS</label>
+            <div class="membership-options">
+                <label class="option-card">
+                    <input type="radio" name="ieee_status" value="no" checked onchange="updateUI()">
+                    <span class="option-label">Non-IEEE Member</span>
+                </label>
+                <label class="option-card">
+                    <input type="radio" name="ieee_status" value="yes" onchange="updateUI()">
+                    <span class="option-label">IEEE Member</span>
+                </label>
+            </div
+
+            <div id="ieeeIdWrapper">
+                <label class="input-hint">IEEE MEMBERSHIP ID</label>
+                <input type="text" id="ieeeId" placeholder ="ID">
+            </div>
+
+            <div class="price-box">
+                <div>
+                    <p style="font-size: 0.65rem; color: #888; text-transform: uppercase; letter-spacing: 1.5px;">Final Amount</p>
+                    <p id="discountLabel" style="font-size: 0.7rem; color: var(--ieee-orange); margin-top: 2px;"></p>
+               
+
+            <button type="submit" class="btn" style="width: 100%; letter-spacing: 2px; height: 55px; cursor: pointer;">
+                PROCEED TO CHECKOUT
+            </button>
+        </form>
+
+        <a href="home.html" style="display: block; text-align: center; margin-top: 30px; color: #666; text-decoration: none; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px;">
+            ← Return Home
+        </a>
+    </div>
+
+    <script>
+        function updateUI() {
+            const status = document.querySelector('input[name="ieee_status"]:checked').value;
+            const idWrapper = document.getElementById('ieeeIdWrapper');
+            const priceDisplay = document.getElementById('priceDisplay');
+            const discountLabel = document.getElementById('discountLabel');
+            const idInput = document.getElementById('ieeeId');
+
+            if (status === 'yes') {
+                idWrapper.classList.add('active');
+                idInput.setAttribute('required', 'true');
+                priceDisplay.innerText = '₹500';
+                discountLabel.innerText = 'IEEE DISCOUNT APPLIED';
+            } else {
+                idWrapper.classList.remove('active');
+                idInput.removeAttribute('required');
+                priceDisplay.innerText = '₹800';
+                discountLabel.innerText = '';
+            }
+        }
+    </script>
+</body>
+</html>
